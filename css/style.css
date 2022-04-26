@@ -16,3 +16,7 @@
 .searchInput:focus{
     outline: none;
 }
+.modal-header{
+    background-color: black;
+    color:whitesmoke;
+}
