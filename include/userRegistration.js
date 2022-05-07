@@ -39,16 +39,44 @@ function validate() {
 
     $.ajax({
       type: "POST",
-      url: "../include/validation.php",
+      url: "../include/activateAcc.php",
       data: data,
       success: (response) => {
-        console.log(response);
+        if (response == 1) {
+          alert("Activated");
+        } else if (response == 0) {
+          alert("Wrong Code");
+        } else if (response == -1) {
+          alert("Code Expired");
+        }
       },
       error: (response) => {
         console.log(response);
       },
     });
   } else {
-    alert("Wrong auth code");
+    alert("Invalid Code");
   }
+}
+
+function renewCode() {
+  const email = document.getElementById("email").value;
+  const data = {
+    email: email,
+  };
+  $.ajax({
+    type: "POST",
+    url: "../include/renewAuthCode.php",
+    data: data,
+    success: (response) => {
+      if (response) {
+        alert("Code Renewed");
+      } else {
+        alert("Can't renew");
+      }
+    },
+    error: (response) => {
+      console.log(response);
+    },
+  });
 }

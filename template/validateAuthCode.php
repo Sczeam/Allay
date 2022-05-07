@@ -19,6 +19,7 @@
      <input type="number" id="authCode" min="100000" max="999999">
      <input type="text" id="email" value="<?php echo $_GET["email"] ?>" readonly>
      <button onclick="validate()">Go</button>
+     <button onclick="renewCode()">Renew Code</button>
  </body>
 
  </html>
