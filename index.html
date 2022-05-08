@@ -8,6 +8,7 @@
   <title>Elley</title>
   <script src="assets/js/jquery-3.6.0.min.js" type="text/javascript"></script>
   <script src="include/userRegistration.js" type="text/javascript"></script>
+  <script src="include/userLogin.js" type="text/javascript"></script>
   <!--
     - favicon
   -->
@@ -777,10 +778,10 @@
       </button>
       <div class="inner-box">
         <div class="forms-wrap">
-          <form action="index.html" autocomplete="off" class="sign-in-form">
+          <form action="include/login.php" method="post" autocomplete="off" class="sign-in-form">
             <div class="logo">
               <img src="./assets/images/logo.png" alt="elley" />
-              <h4>Elley</h4>
+              <h4>Allay</h4>
             </div>
 
             <div class="heading">
@@ -791,17 +792,17 @@
 
             <div class="actual-form">
               <div class="input-wrap">
-                <input type="text" minlength="4" class="input-field" autocomplete="off" required />
-                <label>Name</label>
+                <input type="text" minlength=""  id="loginEmail" class="input-field" autocomplete="off" required />
+                <label>Email</label>
               </div>
 
               <div class="input-wrap">
-                <input type="password" minlength="4" class="input-field" autocomplete="off" required />
+                <input type="password" minlength=""  id="loginPassword" class="input-field" autocomplete="off" required />
                 <label>Password</label>
               </div>
 
-              <input type="submit" value="Sign In" class="sign-btn" />
-
+              <input type="button" onclick="login()" value="Sign In" class="sign-btn" />
+              <p id="loginMessage"></p>
               <p class="text">
                 Forgotten your password or you login datails?
                 <a href="#">Get help</a> signing in
